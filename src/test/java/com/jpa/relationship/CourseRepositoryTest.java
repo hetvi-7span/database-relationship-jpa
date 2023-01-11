@@ -40,4 +40,10 @@ class CourseRepositoryTest {
 
     }
 
+    @Test
+    void deleteCourse(){
+        Long courseId = 1L;
+        courseRepository.delete(courseRepository.findById(courseId).get());
+    }
+
 }

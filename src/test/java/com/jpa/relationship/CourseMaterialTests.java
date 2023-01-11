@@ -47,6 +47,12 @@ class CourseMaterialTests {
 	}
 
 
+	@Test
+	void deleteCourse(){
+		Long courseId = 2L;
+		courseMaterialRepository.delete(courseMaterialRepository.findById(courseId).get());
+	}
+
 
 
 }

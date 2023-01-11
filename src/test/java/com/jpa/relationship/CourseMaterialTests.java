@@ -29,4 +29,24 @@ class CourseMaterialTests {
 		/*System.out.println("course :: " + courseMaterialList.get(0).getCourse());*/
 	}
 
+
+	@Test
+	void updateCourseMaterial(){
+		Long courseMaterialId = 2L;
+		CourseMaterial courseMaterial = courseMaterialRepository.findById(courseMaterialId).get();
+		System.out.println("Data of course from course material :: " + courseMaterial.getCourse());
+
+		Course course = courseMaterial.getCourse();
+		course.setCredit(24);
+		course.setName("Communication");
+		courseMaterial.setCourse(course);
+
+		courseMaterial.setUrl("www.newMaterial.com");
+
+		courseMaterialRepository.save(courseMaterial);
+	}
+
+
+
+
 }

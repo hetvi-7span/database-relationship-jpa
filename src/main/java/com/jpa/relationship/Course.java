@@ -20,7 +20,7 @@ public class Course {
     private Integer credit;
     private String name;
 
-    @OneToOne(mappedBy = "course",fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "course",fetch = FetchType.LAZY,cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     private CourseMaterial courseMaterial;
 
 }
